@@ -54,8 +54,14 @@ function toggleMenu() {
     }
 }
 
+function preloadImage(imageURL) {
+    let img = new Image();
+    img.src = imageURL;
+}
+
 document.addEventListener('DOMContentLoaded', () => { 
     checkWindowSize();
+    preloadImage('./assets/images/icon-close.svg');
 });
 
 headerButton.addEventListener('click', toggleMenu);

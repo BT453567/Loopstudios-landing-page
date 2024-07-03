@@ -108,7 +108,7 @@
 }
 
 @media (hover:none) {
-    .creations-section_button:active{
+    .creations-section__button:active{
         background-color: g.$black;
         border: 2px solid g.$black;
         color: g.$white;

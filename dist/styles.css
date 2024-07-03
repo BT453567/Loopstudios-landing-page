@@ -262,7 +262,7 @@ body {
   }
 }
 @media (hover: none) {
-  .creations-section_button:active {
+  .creations-section__button:active {
     background-color: hsl(0, 0%, 0%);
     border: 2px solid hsl(0, 0%, 0%);
     color: hsl(0, 0%, 100%);

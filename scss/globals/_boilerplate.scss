@@ -1,0 +1,32 @@
+@use '../util' as u;
+@use 'colours' as c;
+
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: u.$font-primary;
+    background-color: c.$background-color;
+  }
+
+  .wrapper {
+    width: 100%;
+    max-width: 70rem;
+  }
+
+
+  

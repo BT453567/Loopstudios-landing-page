@@ -1,0 +1,131 @@
+@use '../globals' as g;
+@use '../util' as u;
+
+.creations-section {
+    padding: 0 g.$side-spacing;
+    padding-top: g.$section-spacing;
+    padding-bottom: g.$section-spacing;
+    background-color: g.$white;
+
+    &__heading-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__heading {
+        font-family: u.$font-secondary;
+        font-weight: 300;
+        font-size: 2rem;
+        color: g.$very-dark-gray;
+        margin-top: 7px;
+    }
+
+    &__button {
+        @include u.button-base(g.$white, g.$dark-gray, g.$dark-gray);
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto auto;
+        gap: 15px;
+        margin-top: 50px;
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        opacity: 0;
+        z-index: 2;
+
+    }
+    
+
+    &__grid-item {
+        position: relative;
+    }
+
+    &__grid-item a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+        z-index: 3; 
+    }
+
+    &__grid-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        
+    }
+
+    &__text-container {
+        position: absolute;
+        bottom: 5%;
+        left: 10%;
+        display: flex;
+        flex-direction: column;
+        z-index: 3;
+        span {
+            font-family: u.$font-secondary;
+            font-weight: 300;
+            font-size: 1.4rem;
+            color: g.$white;
+        }
+    }
+
+
+
+}
+
+@media (hover:hover) {
+    .creations-section__button:hover{
+        background-color: g.$black;
+        border: 2px solid g.$black;
+        color: g.$white;
+    }
+
+    .creations-section__grid-item:hover .creations-section__overlay {
+        opacity: 1;
+    }
+
+    .creations-section__grid-item:hover a::before {
+        opacity: 0;
+    }
+
+    .creations-section__grid-item:hover .creations-section__text-container span {
+        color: g.$black;
+    }
+}
+
+@media (hover:none) {
+    .creations-section_button:active{
+        background-color: g.$black;
+        border: 2px solid g.$black;
+        color: g.$white;
+    }
+
+    .creations-section__grid-item:active .creations-section__overlay {
+        opacity: 1;
+    }
+
+    .creations-section__grid-item:active a::before {
+        opacity: 0;
+    }
+
+    .creations-section__grid-item:active .creations-section__text-container span {
+        color: g.$black;
+    }
+
+}
+
+

@@ -1,0 +1,28 @@
+@use 'fonts' as f;
+
+@mixin button-base($bg-colour, $text-colour, $border-colour) {
+    font-family: f.$font-secondary;
+    font-weight: 300;
+    font-size: 1.1rem;
+    justify-content: center;
+    padding: 10px 30px;
+    padding-bottom: 6px;
+    border: 2px solid $border-colour;
+    cursor: pointer;
+    border-radius: 5px;
+    color: $text-colour;
+    background-color: $bg-colour;
+}
+
+@mixin underline-link-after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -10px;
+}

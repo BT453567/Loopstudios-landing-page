@@ -1,0 +1,72 @@
+@use '../globals' as g;
+@use '../util' as u;
+
+.header {
+    
+    &__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
+    &__logo-container {
+        width: 8rem;
+    
+    }
+
+    &__logo {
+        width: 100%;
+        height: auto;
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        list-style: none;
+    
+        li {
+            margin-right: 20px;
+        }
+    
+        li a {
+            text-decoration: none;
+            color: g.$white;
+            position: relative;
+        }
+
+        li a::after {
+            @include u.underline-link-after;
+        }
+    } 
+
+    &__button {
+        display: none;
+    }
+
+    &__mobile-menu-container {
+        display: none;        
+    }
+
+    
+
+}
+
+@media (hover:hover) {
+    .header__menu li a:hover::after {
+        width: 20px;
+    }
+
+}
+
+@media (hover:none) {
+    .header__menu li a:active::after {
+        width: 20px;
+    }
+}
+
+
+
+
+

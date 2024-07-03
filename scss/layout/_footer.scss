@@ -1,0 +1,94 @@
+@use '../globals' as g;
+@use '../util' as u;
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: g.$black;
+    padding: 40px g.$side-spacing;
+
+    &__left-column {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__logo-container {
+        width: 8rem;
+    }
+
+    &__logo-image {
+        width: 100%;
+        height: auto;
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        list-style: none;
+    
+        li {
+            margin-right: 20px;
+        }
+    
+        li a {
+            text-decoration: none;
+            color: g.$white;
+            position: relative;
+        }
+
+        li a::after {
+            @include u.underline-link-after;
+        }   
+    }
+
+    &__right-column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 20px;
+    }
+
+    &__socials-container {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+
+        a {
+            position: relative;
+        }
+
+        a img {
+            display: block;
+            height: 20px;
+            width: auto;
+        }
+
+        a::after {
+            @include u.underline-link-after;
+        }
+    }
+
+    &__copyright-text {
+        color: g.$dark-gray;
+        text-align: right;
+    }
+
+
+}
+
+@media (hover:hover) {
+    .footer__menu li a:hover::after,
+    .footer__socials-container a:hover::after {
+        width: 20px;
+    }
+
+}
+
+@media (hover:none) {
+    .footer__menu li a:active::after{
+        width: 20px;
+    }
+}
